@@ -61,7 +61,7 @@ jobs:
             .
 
       - name: Save image to tar
-        run: docker save ${{ env.IMAGE_NAME }} | zstd -19 ${{ env.FILE_NAME }}
+        run: docker save ${{ env.IMAGE_NAME }} | zstd -19 -o ${{ env.FILE_NAME }}
 
       - name: Create release
         uses: ncipollo/release-action@v1
